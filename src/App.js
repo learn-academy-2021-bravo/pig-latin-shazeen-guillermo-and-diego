@@ -28,16 +28,20 @@ class App extends Component {
       // ACTION ITEM: use "currentWord" as a starting point for your code
       console.log("currentWord:", currentWord)
 
-      let vowelsArray = currentWord.split("").filter(vowel => {
-        return vowel === "a" || vowel === "e" || vowel === "i" || vowel === "o" || vowel === "u"
-      })
-      console.log("vowelsArray:", vowelsArray)
+      // let vowelsArray = currentWord.split("").filter(vowel => {
+      //   return vowel === "a" || vowel === "e" || vowel === "i" || vowel === "o" || vowel === "u"
+      // })
+      // console.log("vowelsArray:", vowelsArray)
 
       // your code here!
 
       // Remember: console.log is your friend :)
-
-
+      let vowels = ["a", "e", "i", "o", "u"]
+      let translatedStr = ""
+      if(vowels.indexOf(currentWord[0]) > -1){
+        translatedStr = `${currentWord}way`
+      }
+      console.log(translatedStr);``
       // ACTION ITEM: change the value of currentWord to the name of whatever variable you made containing your Pig Latin'd word
       return currentWord
     })
