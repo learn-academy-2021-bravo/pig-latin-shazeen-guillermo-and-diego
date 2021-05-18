@@ -19,6 +19,13 @@ footer {
   padding: 2rem;
 }
 
+.media {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .butcherPig {
   width: 12rem;
   border-radius: 50%;

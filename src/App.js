@@ -17,6 +17,11 @@ class App extends Component {
     };
   }
 
+  componentDidMount() {
+    const audioEl = document.getElementsByClassName("audio-element")[0];
+    audioEl.play();
+  }
+
   // The "myPigLatinCodeHere" function is where you will put your logic to convert the sentence entered by the user to Pig Latin
 
   myPigLatinCodeHere = () => {
@@ -107,23 +112,22 @@ class App extends Component {
     // this method takes the input and saves the value in this.state.phrase so we can use the input in our program
     this.setState({ phrase: e.target.value });
   };
-  componentDidMount() {
-    const audioEl = document.getElementsByClassName("audio-element")[0];
-    audioEl.play();
-  }
 
   render() {
     return (
       <>
         <h1>Pig Latin Translator</h1>
-        <img
-          src={porkypig}
-          alt="pig with butcher cut names in pig latin"
-          className="butcherPig"
-        />
-        <audio className="audio-element" controls>
-          <source src={porkypigsound}></source>
-        </audio>
+        <div className="media">
+          <img
+            src={porkypig}
+            alt="pig with butcher cut names in pig latin"
+            className="butcherPig"
+          />
+          <audio className="audio-element" controls autoplay>
+            <source src={porkypigsound} type="audio/mpeg"></source>
+          </audio>
+        </div>
+
         <div className="inputArea">
           <h4>Enter phrase to be translated:</h4>
           {/* user input field - every DOM event that happens in the input will call the handleChange method and update state */}
@@ -151,7 +155,17 @@ export default App;
 Pig Latin Demos (5 min)
 Show off UI
 What was your team's approach to solving this problem?
+- first solving for first letter in vowels
+- then checkout for vowels overall
+- no vowels y situation
+- "qu" but was having issues with the logic - it was messing up worlds like yummy
 Did the initial approach work out in the end?
+- yes until "qu"
 What was the hardest thing about this project?
+- everything
+- remembering the code links to what/remembering the synthax of build in methods
 What is the biggest take away?
+- paid programmin is life
+- someone trhows ideas and someone turns idea into code
+- review the fundamentals and real knowing them
 */
