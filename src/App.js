@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import butcherPig from "./assets/butcherPig.jpeg";
 import porkypig from "./assets/porkypig.png";
+import porkypigsound from "./assets/porkypidsound.mp3";
 
 class App extends Component {
   constructor(props) {
@@ -106,6 +107,10 @@ class App extends Component {
     // this method takes the input and saves the value in this.state.phrase so we can use the input in our program
     this.setState({ phrase: e.target.value });
   };
+  componentDidMount() {
+    const audioEl = document.getElementsByClassName("audio-element")[0];
+    audioEl.play();
+  }
 
   render() {
     return (
@@ -116,6 +121,9 @@ class App extends Component {
           alt="pig with butcher cut names in pig latin"
           className="butcherPig"
         />
+        <audio className="audio-element" controls>
+          <source src={porkypigsound}></source>
+        </audio>
         <div className="inputArea">
           <h4>Enter phrase to be translated:</h4>
           {/* user input field - every DOM event that happens in the input will call the handleChange method and update state */}
@@ -138,3 +146,12 @@ class App extends Component {
 }
 
 export default App;
+
+/*
+Pig Latin Demos (5 min)
+Show off UI
+What was your team's approach to solving this problem?
+Did the initial approach work out in the end?
+What was the hardest thing about this project?
+What is the biggest take away?
+*/
