@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
 import butcherPig from './assets/butcherPig.jpeg'
+import porkypig from './assets/porkypig.png'
 
 class App extends Component {
   constructor(props){
@@ -40,8 +41,21 @@ class App extends Component {
       let translatedStr = ""
       if(vowels.indexOf(currentWord[0]) > -1){
         translatedStr = `${currentWord}way`
+        return translatedStr
       }
-      console.log(translatedStr);``
+      else if (){}
+      
+      
+      
+      else{
+        let vowelMatches = currentWord.match(/[aeiou]/g)||0
+        console.log("vowelm", vowelMatches)
+        let vowelIndex = currentWord.indexOf(vowelMatches[0])
+        console.log("index", vowelIndex)
+        translatedStr = `${currentWord.substring(vowelIndex)}${currentWord.substring(0,vowelIndex)}ay`
+      return translatedStr
+      }
+      console.log("strr",translatedStr); 
       // ACTION ITEM: change the value of currentWord to the name of whatever variable you made containing your Pig Latin'd word
       return currentWord
     })
@@ -50,6 +64,7 @@ class App extends Component {
     // joining the array back to a string of translated words
     // no need to change this variable
     let translatedWords = translatedWordsArray.join(" ")
+    console.log("translatadewordarray", translatedWordsArray)
     console.log("translatedWords:", translatedWords)
 
     // the setState method will take your information from "translatedWords" and update the state object that is displayed to the user
@@ -61,8 +76,8 @@ class App extends Component {
     // this method restarts the game by setting the original state
     // ACTION ITEM: when you are ready for your full user experience, delete the test words in phrase so that is assigned an empty string
     this.setState({
-      phrase: "alpha through yummy squeal queen fry",
-      phraseTranslated: "This is where your translated sentence will appear."
+      phrase: "",
+      phraseTranslated: ""
     })
   }
 
@@ -84,7 +99,7 @@ class App extends Component {
       <>
         <h1>Pig Latin Translator</h1>
         <img
-          src={ butcherPig }
+          src={ porkypig }
           alt="pig with butcher cut names in pig latin"
           className="butcherPig"
         />
@@ -103,7 +118,7 @@ class App extends Component {
           <button onClick={ this.restartGame }>Clear</button>
         </div>
         <p>{ this.state.phraseTranslated }</p>
-        <footer>Coded by ~your name here~</footer>
+        <footer>Coded by Shazeen, Guillermo, and Diego </footer>
       </>
     )
   }
